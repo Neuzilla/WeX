@@ -32,6 +32,7 @@ namespace WexOne
                     WexOneConsts.LocalizationSourceName,
                     new XmlEmbeddedFileLocalizationDictionaryProvider(
                         Assembly.GetExecutingAssembly(),
+                        "WexOne.Localization.Source"
                         )
                     )
                 );
