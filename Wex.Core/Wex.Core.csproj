@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EA732B7-41C0-4B3A-8248-EA681144A371}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Neuzilla.Wex.Core</RootNamespace>
+    <AssemblyName>Neuzilla.Wex.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp.Newtonsoft.Json, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.Newtonsoft.Json.1.0.0\lib\net45\RestSharp.Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessToken.cs" />
+    <Compile Include="AccessTokenCache.cs" />
+    <Compile Include="Apis\CallbackIP\CallbackIPApi.cs" />
+    <Compile Include="Apis\CallbackIP\CallbackIPApiResponse.cs" />
+    <Compile Include="Apis\CallbackIP\ICallbackIPApi.cs" />
+    <Compile Include="Apis\Material\DownloadTempMaterial\DownloadTempMaterialApi.cs" />
+    <Compile Include="Apis\Material\DeleteMaterial\DeleteMaterialApi.cs" />
+    <Compile Include="Apis\Material\DeleteMaterial\IDeleteMaterialApi.cs" />
+    <Compile Include="Apis\Material\DownloadTempMaterial\IDownloadTempMaterialApi.cs" />
+    <Compile Include="Apis\UserAndGroup\CreateGroup\CreateGroupApi.cs" />
+    <Compile Include="Apis\UserAndGroup\CreateGroup\GroupApiJsonContainer.cs" />
+    <Compile Include="Apis\UserAndGroup\CreateGroup\CreateGroupApiResponse.cs" />
+    <Compile Include="Apis\UserAndGroup\CreateGroup\ICreateGroupApi.cs" />
+    <Compile Include="Apis\Menu\CreateMenu\CreateMenuApi.cs" />
+    <Compile Include="Apis\Menu\CreateMenu\CreateMenuApiJsonDataContainer.cs" />
+    <Compile Include="Apis\Menu\CreateMenu\ICreateMenuApi.cs" />
+    <Compile Include="Apis\UserAndGroup\DeleteGroup\DeleteGroupApi.cs" />
+    <Compile Include="Apis\UserAndGroup\DeleteGroup\IDeleteGroupApi.cs" />
+    <Compile Include="Apis\UserAndGroup\DeleteGroup\DeleteGroupJsonDataContainer.cs" />
+    <Compile Include="Apis\Menu\DeleteMenu\DeleteMenuApi.cs" />
+    <Compile Include="Apis\Menu\DeleteMenu\IDeleteMenuApi.cs" />
+    <Compile Include="Apis\Menu\GetMenu\GetMenuApiResponse.cs" />
+    <Compile Include="Apis\Menu\GetMenu\GetMenuApi.cs" />
+    <Compile Include="Apis\Menu\GetMenu\IGetMenuApi.cs" />
+    <Compile Include="Apis\UserAndGroup\GroupList\GroupListApi.cs" />
+    <Compile Include="Apis\UserAndGroup\GroupList\IGroupListApi.cs" />
+    <Compile Include="Apis\UserAndGroup\GroupList\GroupListApiResponse.cs" />
+    <Compile Include="Apis\UserAndGroup\GroupsUserBelongsTo\GroupsUserBelongsToJsonDataContainer.cs" />
+    <Compile Include="Apis\UserAndGroup\GroupsUserBelongsTo\GroupsUserBelongsToApi.cs" />
+    <Compile Include="Apis\UserAndGroup\GroupsUserBelongsTo\GroupsUserBelongsToApiResponse.cs" />
+    <Compile Include="Apis\UserAndGroup\GroupsUserBelongsTo\IGroupsUserBelongsToApi.cs" />
+    <Compile Include="Apis\Material\CountMedia\ICountMaterialApi.cs" />
+    <Compile Include="Apis\Material\CountMedia\CountMaterialApiResponse.cs" />
+    <Compile Include="Apis\Material\CountMedia\CountMaterialApi.cs" />
+    <Compile Include="Apis\UserAndGroup\MoveUsersToGroup\IMoveUserToGroupApi.cs" />
+    <Compile Include="Apis\UserAndGroup\MoveUsersToGroup\MoveUserToGroupApi.cs" />
+    <Compile Include="Apis\UserAndGroup\MoveUsersToGroup\MoveUsersToGroupJsonDataContainer.cs" />
+    <Compile Include="Apis\UserAndGroup\MoveUserToGroup\MoveUserToGroupApi.cs" />
+    <Compile Include="Apis\UserAndGroup\MoveUserToGroup\MoveUserToGroupJsonDataContainer.cs" />
+    <Compile Include="Apis\UserAndGroup\RenameGroup\UpdateUserRemarkJsonDataContainer.cs" />
+    <Compile Include="Apis\SingleUserJsonDataContainer.cs" />
+    <Compile Include="Apis\SimpleApiResponse.cs" />
+    <Compile Include="Apis\UserAndGroup\MoveUserToGroup\IMoveUserToGroupApi.cs" />
+    <Compile Include="Apis\UserAndGroup\RenameGroup\RenameGroupApi.cs" />
+    <Compile Include="Apis\UserAndGroup\RenameGroup\IRenameGroupApi.cs" />
+    <Compile Include="Apis\UserAndGroup\UpdateUserRemark\IUpdateUserRemarkApi.cs" />
+    <Compile Include="Apis\UserAndGroup\UpdateUserRemark\UpdateUserRemarkApi.cs" />
+    <Compile Include="Apis\IUploadFileApi.cs" />
+    <Compile Include="Apis\Material\UploadPermanentImageMedia\IUploadPermanentImageMediaApi.cs" />
+    <Compile Include="Apis\Material\UploadPermanentImageMedia\UploadPermanentImageMediaApi.cs" />
+    <Compile Include="Apis\Material\UploadPermanentImageMedia\UploadPermanentImageMediaApiResponse.cs" />
+    <Compile Include="Apis\Material\UploadTempMedia\UploadMediaType.cs" />
+    <Compile Include="Apis\Material\UploadTempMedia\UploadTempMediaApi.cs" />
+    <Compile Include="Apis\Material\UploadTempMedia\UploadTempMediaApiResponse.cs" />
+    <Compile Include="Apis\UserAndGroup\UserList\IUserListApi.cs" />
+    <Compile Include="Apis\UserAndGroup\UserList\UserListApiResponse.cs" />
+    <Compile Include="Apis\UserAndGroup\GetUserInfo\GetUserInfoApi.cs" />
+    <Compile Include="Apis\UserAndGroup\GetUserInfo\GetUserInfoApiResponse.cs" />
+    <Compile Include="Apis\UserAndGroup\GetUserInfo\IGetUserInfoApi.cs" />
+    <Compile Include="Apis\UserAndGroup\UserList\UserListApi.cs" />
+    <Compile Include="Apis\ApiResponseBase.cs" />
+    <Compile Include="Apis\WeChatApiBase.cs" />
+    <Compile Include="Apis\WeChatDownloadApiBase.cs" />
+    <Compile Include="Apis\WeChatUploadFileApiBase.cs" />
+    <Compile Include="Apis\Material\UploadTempMedia\IUploadTempMediaApi.cs" />
+    <Compile Include="Menu\Buttons\ClickButton.cs" />
+    <Compile Include="Menu\Buttons\MenuGroupButton.cs" />
+    <Compile Include="Menu\Buttons\ScancodePushButton.cs" />
+    <Compile Include="Menu\Buttons\ScancodeWaitmsgButton.cs" />
+    <Compile Include="Menu\Buttons\WechatAlbumOrTakePictureButton.cs" />
+    <Compile Include="Menu\Buttons\TakePictureButton.cs" />
+    <Compile Include="Menu\Buttons\ViewPostButton.cs" />
+    <Compile Include="Menu\Buttons\ViewUrlButton.cs" />
+    <Compile Include="Menu\Buttons\PushMsgButton.cs" />
+    <Compile Include="Menu\IClickMenuButton.cs" />
+    <Compile Include="Menu\INamedMenuButton.cs" />
+    <Compile Include="Menu\IMenuGroupButton.cs" />
+    <Compile Include="Menu\ITopMenu.cs" />
+    <Compile Include="Menu\IMenuButton.cs" />
+    <Compile Include="Menu\IViewMenuButton.cs" />
+    <Compile Include="Menu\MenuContainer.cs" />
+    <Compile Include="Messages\EventMessages\UnsubscribeEventMessage.cs" />
+    <Compile Include="Messages\EventMessages\SubscribeEventMessage.cs" />
+    <Compile Include="Messages\EventMessages\ClickMenuButtonEventMessage.cs" />
+    <Compile Include="Messages\EventMessages\EventType.cs" />
+    <Compile Include="Messages\EventMessages\LocationReportEventMessage.cs" />
+    <Compile Include="Messages\EventMessages\WeChatRequestEventMessageBase.cs" />
+    <Compile Include="Messages\Response\IWeChatEncryptResponseMessage.cs" />
+    <Compile Include="Messages\Request\IWeChatEncryptRequestMessage.cs" />
+    <Compile Include="Messages\Response\MediaEntity\Article.cs" />
+    <Compile Include="Messages\Response\MediaEntity\Music.cs" />
+    <Compile Include="Messages\Request\IWeChatRequestNormalMessage.cs" />
+    <Compile Include="Messages\Response\IWeChatResponseXmlMessage.cs" />
+    <Compile Include="Messages\Request\IWeChatRequestXmlMessage.cs" />
+    <Compile Include="Messages\Request\IWeChatRequestEventMessage.cs" />
+    <Compile Include="Messages\Request\WeChatRequestLinkMessage.cs" />
+    <Compile Include="Messages\Request\WeChatRequestShortVideoMessage.cs" />
+    <Compile Include="Messages\Request\WeChatRequestVideoMessage.cs" />
+    <Compile Include="Messages\Request\WeChatRequestVoiceMessage.cs" />
+    <Compile Include="Messages\Request\WeChatRequestImageMessage.cs" />
+    <Compile Include="Messages\Request\WeChatRequestLocationMessage.cs" />
+    <Compile Include="Messages\Request\WeChatRequestTextMessage.cs" />
+    <Compile Include="Messages\Request\WeChatRequestType.cs" />
+    <Compile Include="Messages\Request\WeChatRequestXmlMessageBase.cs" />
+    <Compile Include="Messages\Request\WeChatResponseType.cs" />
+    <Compile Include="Messages\Response\MediaEntity\Video.cs" />
+    <Compile Include="Messages\Response\WeChatResponseVideoMessage.cs" />
+    <Compile Include="Messages\Response\WeChatResponseVoiceMessage.cs" />
+    <Compile Include="Messages\Response\WeChatResponseNewsMessage.cs" />
+    <Compile Include="Messages\Response\WeChatResponseImageMessage.cs" />
+    <Compile Include="Messages\Response\WeChatResponseTextMessage.cs" />
+    <Compile Include="Messages\WeChatRequestEventMessageHandler.cs" />
+    <Compile Include="Messages\WeChatRequestMessageFactory.cs" />
+    <Compile Include="Messages\WeChatRequestXmlMessageExtension.cs" />
+    <Compile Include="Messages\Response\WeChatResponseMessageBase.cs" />
+    <Compile Include="FormParameterAttribute.cs" />
+    <Compile Include="OAuth\OAuthScope.cs" />
+    <Compile Include="OAuth\WeChatOAuthManager.cs" />
+    <Compile Include="Utility\CheckSignature.cs" />
+    <Compile Include="Apis\AccessToken\AccessTokenApi.cs" />
+    <Compile Include="Apis\AccessToken\AccessTokenApiResponse.cs" />
+    <Compile Include="Apis\AccessToken\IAccessTokenApi.cs" />
+    <Compile Include="Group\UserGroup.cs" />
+    <Compile Include="Apis\IApi.cs" />
+    <Compile Include="Apis\IApiResponse.cs" />
+    <Compile Include="Apis\IJsonRequest.cs" />
+    <Compile Include="Apis\IJsonRequestContainer.cs" />
+    <Compile Include="Apis\IMustPost.cs" />
+    <Compile Include="Apis\IWeChatApi.cs" />
+    <Compile Include="IWeChatMPContext.cs" />
+    <Compile Include="Messages\Response\MediaEntity\Image.cs" />
+    <Compile Include="Messages\Response\MediaEntity\SimpleMedia.cs" />
+    <Compile Include="Messages\Response\MediaEntity\Voice.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryStringAttribute.cs" />
+    <Compile Include="Utility\Cryptography.cs" />
+    <Compile Include="Utility\DateTimeHelper.cs" />
+    <Compile Include="Utility\RequestBuilder.cs" />
+    <Compile Include="Apis\WeChatApiException.cs" />
+    <Compile Include="Utility\UrlChecker.cs" />
+    <Compile Include="Utility\WXBizMsgCrypt.cs" />
+    <Compile Include="Utility\XmlSerializationHelper.cs" />
+    <Compile Include="WeChatConsts.cs" />
+    <Compile Include="WeChatMPContext.cs" />
+    <Compile Include="Messages\IWeChatXmlMessage.cs" />
+    <Compile Include="XmlMessagePostAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
