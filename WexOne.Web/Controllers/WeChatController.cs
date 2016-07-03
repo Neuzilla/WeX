@@ -1,5 +1,4 @@
 ﻿using Abp.Domain.Repositories;
-using MessagingToolkit.QRCode.Codec;
 using Neuzilla.Wex.Core;
 using Neuzilla.Wex.Core.Apis;
 using Neuzilla.Wex.Core.Apis.Material;
