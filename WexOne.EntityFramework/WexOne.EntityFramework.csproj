@@ -169,6 +169,14 @@
     <Compile Include="Migrations\201605041151380_UserAccount_And_Notification_Changes.Designer.cs">
       <DependentUpon>201605041151380_UserAccount_And_Notification_Changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607162139426_RemoveUnnecessaryTable.cs" />
+    <Compile Include="Migrations\201607162139426_RemoveUnnecessaryTable.Designer.cs">
+      <DependentUpon>201607162139426_RemoveUnnecessaryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607162152054_AddWeChatEventLogsTable.cs" />
+    <Compile Include="Migrations\201607162152054_AddWeChatEventLogsTable.Designer.cs">
+      <DependentUpon>201607162152054_AddWeChatEventLogsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WexDataModule.cs" />
@@ -236,6 +244,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605041151380_UserAccount_And_Notification_Changes.resx">
       <DependentUpon>201605041151380_UserAccount_And_Notification_Changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607162139426_RemoveUnnecessaryTable.resx">
+      <DependentUpon>201607162139426_RemoveUnnecessaryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607162152054_AddWeChatEventLogsTable.resx">
+      <DependentUpon>201607162152054_AddWeChatEventLogsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

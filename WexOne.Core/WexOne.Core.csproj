@@ -96,6 +96,7 @@
     <Compile Include="AzureStorage\AzureBlobStorageProvider.cs" />
     <Compile Include="AzureStorage\ConnectionString.cs" />
     <Compile Include="IStorageProvider.cs" />
+    <Compile Include="WeChat\WeChatEventLog.cs" />
     <Compile Include="WexConsts.cs" />
     <Compile Include="WexCoreModule.cs" />
     <Compile Include="Authorization\WexAuthorizationProvider.cs" />

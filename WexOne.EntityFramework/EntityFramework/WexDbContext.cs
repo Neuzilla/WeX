@@ -5,6 +5,7 @@ using WexOne.MultiTenancy;
 using WexOne.Users;
 using System.Data.Entity;
 using WexOne.Core;
+using WexOne.WeChat;
 
 namespace WexOne.EntityFramework
 {
@@ -39,5 +40,7 @@ namespace WexOne.EntityFramework
         {
 
         }
+
+        public IDbSet<WeChatEventLog> WeChatEventLogs { get; set; }
     }
 }
