@@ -3,6 +3,7 @@ using Neuzilla.Wex.Core.Apis.Material;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
@@ -20,29 +21,11 @@ namespace Neuzilla.Wex.Core.Tests.Api
             api.Type = UploadMediaType.Image;
             api.FileName = "test.jpg";
             api.ContentType = "image/jpeg";
-            api.ServerFilePath = "../../test-data/images/IMG_20150427_121714.jpg";
+
+            api.ServerFilePath = Path.Combine(TestContext.CurrentContext.TestDirectory, "../../test-data/images/IMG_20150427_121714.jpg");
             var response= api.Execute();
             Assert.AreEqual(UploadMediaType.Image, response.Type);
             Assert.IsTrue(response.Created_At>0);
-            Assert.IsNotNull(response.Media_Id);
-            Console.WriteLine(response.Media_Id);
-        }
-
-        [Test]
-        public void TestUploadTempMediaApi_QRCode()
-        {
-            MemoryStream ms = new MemoryStream();
-            throw new NotImplementedException(); 
-            //TODO: READ A image
-
-            UploadTempMediaApi api = new UploadTempMediaApi(context);
-            api.Type = UploadMediaType.Image;
-            api.FileName = "test.jpg";
-            api.ContentType = "image/jpeg";
-            api.FileData = ms.ToArray();
-            var response = api.Execute();
-            Assert.AreEqual(UploadMediaType.Image, response.Type);
-            Assert.IsTrue(response.Created_At > 0);
             Assert.IsNotNull(response.Media_Id);
             Console.WriteLine(response.Media_Id);
         }
@@ -53,7 +36,7 @@ namespace Neuzilla.Wex.Core.Tests.Api
             IUploadPermanentImageMediaApi api = new UploadPermanentImageMediaApi(context);
             api.FileName = "test.jpg";
             api.ContentType = "image/jpeg";
-            api.ServerFilePath = "../../test-data/images/IMG_20150427_121714.jpg";
+            api.ServerFilePath = Path.Combine(TestContext.CurrentContext.TestDirectory, "../../test-data/images/IMG_20150427_121714.jpg");
             var response = api.Execute();
             Assert.IsNotNull(response.Url);
             Console.WriteLine(response.Url);

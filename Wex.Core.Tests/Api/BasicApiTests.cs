@@ -32,7 +32,7 @@ namespace Neuzilla.Wex.Core.Tests.Api
             var response = api.Execute();
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.IP_List);
-            Assert.AreEqual(96,response.IP_List.Count);
+            Assert.IsTrue(response.IP_List.Count>90);
         }
     }
 }
