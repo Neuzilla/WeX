@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wex.Core", "Wex.Core\Wex.Core.csproj", "{0EA732B7-41C0-4B3A-8248-EA681144A371}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WexOne.Web", "WexOne.Web\WexOne.Web.csproj", "{404A6D3B-AA85-4E4C-AEEE-1E5026D5F135}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WexOne.WebApi", "WexOne.WebApi\WexOne.WebApi.csproj", "{5EB52D3D-09FD-463A-B02A-8D9856BD3724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wex.Core.Tests", "Wex.Core.Tests\Wex.Core.Tests.csproj", "{E786E2A6-A962-4EF6-A879-13DF4A4F0A98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E786E2A6-A962-4EF6-A879-13DF4A4F0A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E786E2A6-A962-4EF6-A879-13DF4A4F0A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E786E2A6-A962-4EF6-A879-13DF4A4F0A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E786E2A6-A962-4EF6-A879-13DF4A4F0A98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
