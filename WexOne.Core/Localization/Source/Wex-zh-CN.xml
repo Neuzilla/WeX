@@ -24,6 +24,9 @@
     <text name="LogIn" value="登录" />
 
     <text name="LoginFailed" value="登录失败!" />
+
+    <text name="EventTriggerDate" value="事件触发时间" />
+    <text name="MsgType" value="消息类型" />
     
   </texts>
 </localizationDictionary>

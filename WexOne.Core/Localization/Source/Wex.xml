@@ -54,5 +54,9 @@
     <text name="Yes" value="Yes" />
     <text name="No" value="No" />
     <text name="Optional" value="Optional" />
+
+    <text name="EventTriggerDate" value="Trigger Date" />
+    <text name="MsgType" value="Msg Type" />
+    
   </texts>
 </localizationDictionary>

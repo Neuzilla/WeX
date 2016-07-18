@@ -14,12 +14,14 @@
                 "type": "POST",
                 "dataSrc":"data"
             },
+            "order": [[ 0, "desc" ]],
             columns: [
-                { "data": "CreationTime", "render": function (d) { return moment(d).format('YYYY/MM/DD hh:mm:ss');} },
+                { "width":"200","data": "CreationTime", "render": function (d) { return moment(d).format('YYYY/MM/DD hh:mm:ss');} },
                 { "data": "FromUserName" },
                 { "data": "ToUserName" },
-                { "data": "MsgType" },
+                { "width":"80","data": "MsgType" },
                 {
+                    "width":"40%",
                     "data": "OriginalXml", "render": function (d) {
                         return $('<div/>').text(d).html();
                     }
