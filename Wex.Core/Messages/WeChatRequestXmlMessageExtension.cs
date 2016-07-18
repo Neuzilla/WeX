@@ -13,5 +13,11 @@ namespace Neuzilla.Wex.Core.Messages
         {
             return XmlSerializationHelper.SerializeObject(msg);
         }
+
+        public static string ToEncryptXml(this IWeChatResponseXmlMessage msg,string encodingAESKey, string appid)
+        {
+            string originalMsg= XmlSerializationHelper.SerializeObject(msg);
+            return Tencent.Cryptography.AES_encrypt(originalMsg, encodingAESKey, appid);
+        }
     }
 }

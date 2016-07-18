@@ -650,6 +650,7 @@
       <DependentUpon>Login.css</DependentUpon>
     </Content>
     <Content Include="Views\Account\Register.js" />
+    <Content Include="Views\EventLogs\Index.js" />
     <Content Include="Views\Tenants\Index.js" />
     <Content Include="Views\Users\Index.js" />
     <Content Include="Web.config">
@@ -713,6 +714,7 @@
     <Content Include="Scripts\zui\fonts\zenicon.ttf" />
     <Content Include="Scripts\zui\fonts\zenicon.woff" />
     <Content Include="Scripts\zui\lib\kindeditor\themes\default\default.psd" />
+    <Content Include="Views\EventLogs\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -744,7 +746,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\themes\" />
-    <Folder Include="Views\EventLogs\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

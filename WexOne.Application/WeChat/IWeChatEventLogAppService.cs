@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WexOne.Dto;
 using WexOne.WeChat.Dto;
 
 namespace WexOne.WeChat
@@ -13,6 +14,6 @@ namespace WexOne.WeChat
     {
         Task CreateEventLog(CreateEventLogInput input);
         Task ClearEventLog();
-        Task<WexOne.Dto.DatatablePagedResultDto<EventLogListDto>> GetEventLogs(GetEventLogsInput input);
+        Task<WexOne.Dto.DatatablePagedResultDto<EventLogListDto>> GetEventLogs(DatatablesPagedAndSortedInputDto input);
     }
 }

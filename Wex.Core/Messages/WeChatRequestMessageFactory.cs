@@ -35,6 +35,8 @@ namespace Neuzilla.Wex.Core.Messages
                         //do nothing if encription compatible mode is on
                     }
                 }
+                //save the event record
+
 
                 return DeserializeMessage(xml, xmlmsg);
             }

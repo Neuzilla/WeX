@@ -13,7 +13,7 @@ namespace WexOne.Web
             //~/Bundles/vendor/css
             bundles.Add(
                 new StyleBundle("~/Bundles/vendor/css")
-                    .Include("~/Content/bootstrap-cosmo.min.css", new CssRewriteUrlTransform())
+                    .Include("~/Content/bootstrap.min.css", new CssRewriteUrlTransform())
                     .Include("~/Content/toastr.min.css", new CssRewriteUrlTransform())
                     .Include("~/Scripts/sweetalert/sweet-alert.css", new CssRewriteUrlTransform())
                     .Include("~/Content/flags/famfamfam-flags.css", new CssRewriteUrlTransform())

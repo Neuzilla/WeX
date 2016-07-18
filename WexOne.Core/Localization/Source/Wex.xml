@@ -3,6 +3,9 @@
   <texts>
     <text name="HomePage" value="Home page" />
     <text name="About" value="About" />
+    <text name="Users" value="User" />
+    <text name="Tenants" value="Tenant" />
+    <text name="EventLogs" value="Event Log" />
     <text name="WellcomeMessage" value="Welcome to Wex!" />
     
     <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
@@ -27,7 +30,6 @@
     <text name="Surname" value="Surname" />
     <text name="EmailAddress" value="Email address" />
 
-    <text name="Tenants" value="Tenants" />
     <text name="SavedSuccessfully" value="Saved successfully" />
     <text name="CreateNewTenant" value="Create new tenant" />
     <text name="AdminEmailAddress" value="Admin email address" />
@@ -46,7 +48,6 @@
     <text name="RegisterFormUserNameInvalidMessage">Please dont enter an email address for username.</text>
 
     <text name="DatabaseConnectionString" value="Database connection string" />
-    <text name="Users" value="Users" />
     <text name="IsActive" value="Is active" />
     <text name="FullName" value="Full name" />
     <text name="CreateNewUser" value="Create new user" />

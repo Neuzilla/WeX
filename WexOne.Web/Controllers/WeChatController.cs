@@ -1,27 +1,12 @@
-﻿using Abp.Domain.Repositories;
-using Neuzilla.Wex.Core;
-using Neuzilla.Wex.Core.Apis;
-using Neuzilla.Wex.Core.Apis.Material;
+﻿using Neuzilla.Wex.Core;
 using Neuzilla.Wex.Core.Messages;
-using Neuzilla.Wex.Core.Messages.Response;
-using Neuzilla.Wex.Core.Messages.EventMessages;
 using Neuzilla.Wex.Core.Utility;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-using System.Xml.Linq;
-using WexOne.Core;
-using WexOne.Core.AzureStorage;
-using Abp.Domain.Uow;
+using WexOne.WeChat;
+using WexOne.WeChat.Dto;
 
 namespace WexOne.Web.Controllers
 {
@@ -29,9 +14,10 @@ namespace WexOne.Web.Controllers
     public class WeChatController : WeChatControllerBase
     {
         Uri baseUri = new Uri(ConfigurationManager.AppSettings["HostUrl"]);
-
-        public WeChatController()
+        readonly IWeChatEventLogAppService _eventLogService;
+        public WeChatController(IWeChatEventLogAppService eventLogService)
         {
+            _eventLogService = eventLogService;
         }
 
         public async override Task<ActionResult> Index(string signature, string timestamp, string nonce, string echostr, string message)
@@ -43,6 +29,14 @@ namespace WexOne.Web.Controllers
             }
 
             var requestMsg = WeChatRequestMessageFactory.Create(message, EncodingAESKey, AppId);
+            var eventLog = new CreateEventLogInput() {
+                CreationTime = DateTime.Now,
+                FromUserName = requestMsg.FromUserName,
+                ToUserName = requestMsg.ToUserName,
+                OriginalXml = message,
+                MsgType=requestMsg.MsgType.ToString()
+            };
+            await _eventLogService.CreateEventLog(eventLog);
             if (requestMsg is WeChatRequestTextMessage)
             {
                 //处理文本输入

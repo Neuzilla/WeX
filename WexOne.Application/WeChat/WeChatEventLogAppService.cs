@@ -10,6 +10,7 @@ using WexOne.Dto;
 using System.Data.Entity;
 using System.Linq.Dynamic;
 using Abp.Linq.Extensions;
+using Abp.Web.Models;
 
 namespace WexOne.WeChat
 {
@@ -33,19 +34,22 @@ namespace WexOne.WeChat
             await _eventLogRepository.InsertAsync(x);
         }
 
-        public async Task<DatatablePagedResultDto<EventLogListDto>> GetEventLogs(GetEventLogsInput input)
+        public async Task<DatatablePagedResultDto<EventLogListDto>> GetEventLogs(DatatablesPagedAndSortedInputDto input)
         {
-            var query = _eventLogRepository.GetAll()
-                .WhereIf(!string.IsNullOrWhiteSpace(input.Filter),x=>x.FromUserName.Contains(input.Filter)|| x.ToUserName.Contains(input.Filter))
-                .WhereIf(!string.IsNullOrWhiteSpace(input.MsgType), x => input.MsgType == input.MsgType);
+            var queryAll = _eventLogRepository.GetAll();
+            var count = await queryAll.CountAsync();
 
-            var count = await query.CountAsync();
+            var query = _eventLogRepository.GetAll()
+                .WhereIf(!string.IsNullOrWhiteSpace(input.Search.Value), x => x.FromUserName.Contains(input.Search.Value) || x.ToUserName.Contains(input.Search.Value));
+                //.WhereIf(!string.IsNullOrWhiteSpace(input.MsgType), x => input.MsgType == input.MsgType);
+
+            var filtered = await query.CountAsync();
             var data = await query.OrderBy(input.Sorting)
                 .PageBy(input)
                 .ToListAsync();
 
             var dataDto=data.MapTo<List<EventLogListDto>>();
-            return new DatatablePagedResultDto<EventLogListDto>(count, dataDto);
+            return new DatatablePagedResultDto<EventLogListDto>(count,filtered, dataDto);
         }
     }
 }

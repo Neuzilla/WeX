@@ -2,7 +2,11 @@
 <localizationDictionary culture="zh-CN">
   <texts>
     <text name="HomePage" value="主页" />
+    <text name="Users" value="用户" />
+    <text name="Tenants" value="账号" />
     <text name="About" value="关于我们" />
+    <text name="EventLogs" value="微信事件日志" />
+    
     <text name="WellcomeMessage" value="欢迎使用 Wex!" />
     
     <text name="FormIsNotValidMessage" value="部分输入信息不符合要求，请检查并改正.." />

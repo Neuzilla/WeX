@@ -1,17 +1,14 @@
 ﻿using Abp.Application.Services.Dto;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WexOne.Dto
 {
     public class DatatablePagedResultDto<T> : IOutputDto
     {
-        public DatatablePagedResultDto(int total, IReadOnlyList<T> rows)
+        public DatatablePagedResultDto(int total,int filtered, IReadOnlyList<T> rows)
         {
             this.recordsTotal = total;
+            this.recordsFiltered = filtered;
             this.data = rows;
         }
 

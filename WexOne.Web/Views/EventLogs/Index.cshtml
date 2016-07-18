@@ -1,0 +1,28 @@
+﻿@using Abp.Web.Mvc.Extensions
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts
+{
+    @Html.IncludeScript("~/Scripts/DataTables/jquery.dataTables.min.js")
+    @Html.IncludeScript("~/Scripts/DataTables/dataTables.bootstrap.min.js")
+    @Html.IncludeScript("~/Views/EventLogs/Index.js")
+}
+@section Styles
+{
+    @Html.IncludeStyle("~/Content/DataTables/css/dataTables.bootstrap.min.css")
+}
+<table id="eventLogTable" class="table table-striped table-bordered" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Event Trigger Date</th>
+            <th>From Username</th>
+            <th>To Username</th>
+            <th>Msg Type</th>
+            <th>Xml</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>

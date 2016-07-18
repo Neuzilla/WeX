@@ -41,6 +41,13 @@ namespace WexOne.Web
                         )
                 ).AddItem(
                     new MenuItemDefinition(
+                        "EventLogs",
+                        L("EventLogs"),
+                        url: "EventLogs",
+                        icon: "fa fa-calendar-check-o"
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
                         "About",
                         L("About"),
                         url: "About",
