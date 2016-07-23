@@ -203,6 +203,7 @@
     <Compile Include="Utility\WXBizMsgCrypt.cs" />
     <Compile Include="Utility\XmlSerializationHelper.cs" />
     <Compile Include="WeChatConsts.cs" />
+    <Compile Include="WeChatEmotions.cs" />
     <Compile Include="WeChatMPContext.cs" />
     <Compile Include="Messages\IWeChatXmlMessage.cs" />
     <Compile Include="XmlMessagePostAttribute.cs" />
