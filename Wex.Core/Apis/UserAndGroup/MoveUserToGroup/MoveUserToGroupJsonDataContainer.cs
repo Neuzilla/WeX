@@ -10,6 +10,6 @@ namespace Neuzilla.Wex.Core.Apis
     public class MoveUserToGroupJsonDataContainer : SingleUserJsonDataContainer
     {
         [JsonProperty("to_groupid")]
-        public int To_GroupId { get; set; }
+        public int ToGroupId { get; set; }
     }
 }

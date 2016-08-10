@@ -45,6 +45,8 @@ namespace Neuzilla.Wex.Core.Apis
             var request=builder.GetRequest();
             var client = new RestClient(WeChatConsts.BaseUrl);
             var resp= client.Execute<AccessTokenApiResponse>(request);
+            if (resp.ErrorException != null)
+                throw new WeChatApiException(328001, resp.ErrorMessage);
             WeChatOAContext.CheckError(resp.Data);
             return resp.Data;
         }

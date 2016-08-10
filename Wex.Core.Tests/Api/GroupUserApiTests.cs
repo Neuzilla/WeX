@@ -29,7 +29,7 @@ namespace Neuzilla.Wex.Core.Tests.Api
             var jsonContainer = new MoveUserToGroupJsonDataContainer();
             jsonContainer.OpenId = GetOpenId();
             int targetgroupid=GetGroupId();
-            jsonContainer.To_GroupId = targetgroupid;
+            jsonContainer.ToGroupId = targetgroupid;
             api.JsonData = jsonContainer;
             var response = api.Execute();
 

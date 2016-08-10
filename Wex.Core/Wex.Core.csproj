@@ -65,6 +65,10 @@
     <Compile Include="Apis\CallbackIP\CallbackIPApi.cs" />
     <Compile Include="Apis\CallbackIP\CallbackIPApiResponse.cs" />
     <Compile Include="Apis\CallbackIP\ICallbackIPApi.cs" />
+    <Compile Include="Apis\GenerateShortUrl\GenerateShortUrlApi.cs" />
+    <Compile Include="Apis\GenerateShortUrl\GenerateShortUrlApiResponse.cs" />
+    <Compile Include="Apis\GenerateShortUrl\GenerateShortUrlApiJsonContainer.cs" />
+    <Compile Include="Apis\GenerateShortUrl\IGenerateShortUrlApi.cs" />
     <Compile Include="Apis\Material\DownloadTempMaterial\DownloadTempMaterialApi.cs" />
     <Compile Include="Apis\Material\DeleteMaterial\DeleteMaterialApi.cs" />
     <Compile Include="Apis\Material\DeleteMaterial\IDeleteMaterialApi.cs" />

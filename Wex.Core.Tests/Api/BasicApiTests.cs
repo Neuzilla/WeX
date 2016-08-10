@@ -34,5 +34,17 @@ namespace Neuzilla.Wex.Core.Tests.Api
             Assert.IsNotNull(response.IP_List);
             Assert.IsTrue(response.IP_List.Count>90);
         }
+
+        [Test]
+        public void TestGenerateShortUrlApi()
+        {
+            IGenerateShortUrlApi api = new GenerateShortUrlApi(context);
+            api.JsonData = new GenerateShortUrlApiJsonContainer() { LongUrl = "http://blog.neuzilla.com" };
+            var response = api.Execute();
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.ShortUrl);
+            Assert.IsTrue(response.ShortUrl.StartsWith("http://w.url.cn/s/"));
+            Console.WriteLine(response.ShortUrl);
+        }
     }
 }
