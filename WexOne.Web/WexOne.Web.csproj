@@ -451,7 +451,7 @@
     <Content Include="Abp\Framework\styles\abp.css.map" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
-    <None Include="Properties\PublishProfiles\azurecn.pubxml" />
+    <None Include="Properties\PublishProfiles\wexn.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
