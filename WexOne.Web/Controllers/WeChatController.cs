@@ -29,13 +29,12 @@ namespace WexOne.Web.Controllers
             }
 
             var requestMsg = WeChatRequestMessageFactory.Create(message, EncodingAESKey, AppId);
-            var eventLog = new CreateEventLogInput()
-            {
+            var eventLog = new CreateEventLogInput() {
                 CreationTime = DateTime.Now,
                 FromUserName = requestMsg.FromUserName,
                 ToUserName = requestMsg.ToUserName,
                 OriginalXml = message,
-                MsgType = requestMsg.MsgType.ToString()
+                MsgType=requestMsg.MsgType.ToString()
             };
             _eventLogService.CreateEventLog(eventLog);
             if (requestMsg is WeChatRequestTextMessage)
@@ -48,21 +47,15 @@ namespace WexOne.Web.Controllers
                 msg.FromUserName = request.ToUserName;
                 msg.ToUserName = request.FromUserName;
                 msg.CreateTime = DateTimeHelper.NowForWeChat;
-                msg.Content = "Hello World powered by Neuzilla Wex framework" + WeChatEmotions.GetEmotion(WeChatEmotionType.Smile).SymbolCode;
+                msg.Content = "Hello World powered by Neuzilla Wex framework"+WeChatEmotions.GetEmotion(WeChatEmotionType.Smile).SymbolCode;
 
                 return Content(msg.ToXml());
             }
             else
             {
-                //处理文本输入
-                var request = requestMsg as WeChatRequestTextMessage;
-
                 //处理URL文本
                 var msg = new WeChatResponseTextMessage();
-                msg.FromUserName = request.ToUserName;
-                msg.ToUserName = request.FromUserName;
                 msg.CreateTime = DateTimeHelper.NowForWeChat;
-                msg.Content = "I cannot understand you";
 
                 return Content(msg.ToXml());
             }
