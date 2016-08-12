@@ -53,26 +53,27 @@ namespace WexOne.Web.Controllers
             }
             else
             {
-                //处理URL文本
                 var msg = new WeChatResponseTextMessage();
+                msg.FromUserName = requestMsg.ToUserName;
+                msg.ToUserName = requestMsg.FromUserName;
                 msg.CreateTime = DateTimeHelper.NowForWeChat;
+                msg.Content = "主人，我听不懂你在说什么"+WeChatEmotions.GetEmotion(WeChatEmotionType.Swear).SymbolCode;
 
                 return Content(msg.ToXml());
             }
         }
-        //测试号
         public override string AppId
         {
-            get { return "<your appid>"; }
+            get { return ConfigurationManager.AppSettings["AppId"]; }
         }
 
         public override string AppSecret
         {
-            get { return "<your app serect>"; }
+            get { return ConfigurationManager.AppSettings["AppSecret"]; }
         }
         public override string EncodingAESKey
         {
-            get { return "<your aes key>"; }
+            get { return ConfigurationManager.AppSettings["EncodingAESKey"]; }
         }
     }
 }
